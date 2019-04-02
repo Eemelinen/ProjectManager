@@ -1,0 +1,56 @@
+package hh.palvelinohjelmointi.ProjectList.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Project {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long projectId;
+	
+	private String projectName;
+	private String description;
+	
+	public Project() {}
+	
+	public Project(String projectName, String description) {
+		super();
+		this.projectName = projectName;
+		this.description = description;
+	}
+	
+	public long getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(long projectId) {
+		this.projectId = projectId;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Project [projectId=" + projectId + ", projectName=" + projectName + ", description=" + description
+				+ "]";
+	}
+	
+}
