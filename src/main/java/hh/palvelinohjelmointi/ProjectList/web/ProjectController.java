@@ -13,7 +13,7 @@ public class ProjectController {
 	@Autowired
 	private ProjectRepository projectRepo;
 	
-	// == Kaikki projektit haetaan katalogisivulle näytettäväksi.Näihin tulee linkit sivulle projektin tiedosita. ==
+	// == Kaikki projektit haetaan katalogisivulle näytettäväksi. Näihin tulee linkit sivulle projektin tiedosita. ==
 	@RequestMapping(value= {"/", "/projectCatalog"})
 	public String projectsListed(Model model) {
 		
