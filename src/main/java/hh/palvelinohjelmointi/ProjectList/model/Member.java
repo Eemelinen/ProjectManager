@@ -1,9 +1,13 @@
 package hh.palvelinohjelmointi.ProjectList.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Member {
@@ -17,6 +21,9 @@ public class Member {
 	private String email;
 	private String phoneNumber;
 	private String description;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
+	private List<Membership> memberships;
 	
 	public Member() {}
 	
@@ -76,6 +83,14 @@ public class Member {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Membership> getMemberships() {
+		return memberships;
+	}
+
+	public void setMemberships(List<Membership> memberships) {
+		this.memberships = memberships;
 	}
 
 	@Override

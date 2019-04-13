@@ -6,21 +6,30 @@
 </head>
 <body>
 
-<h1>Projects</h1>
+	<h1>Projects</h1>
 
-<table>
-
-	<tr>
-		<th>Project Name</th>
-		<th>Description</th>
-	</tr>
+	<Form action="/memberCatalog">
+		<input type="submit" value="Members" />
+	</Form>
 	
-	<tr th:each = "project : ${projects}">
-		<td th:text="${project.projectName}"></td>
-		<td th:text="${project.description}"></td>
-	</tr>
+	<div style="clear: both; display: block; height: 20px;"></div>
 
-</table>
+	<table>
+	
+		<tr>
+			<th>Project Name</th>
+			<th>Description</th>
+		</tr>
+		
+		<tr th:each = "project : ${projects}">
+			<td th:text="${project.projectName}"></td>
+			<td th:text="${project.description}"></td>
+			
+			<td><a th:href="@{/projectDetails/{projectId}(projectId=${project.projectId})}">Check details</a></td>
+			
+		</tr>
+	
+	</table>
 	 
 	 
 </body>
