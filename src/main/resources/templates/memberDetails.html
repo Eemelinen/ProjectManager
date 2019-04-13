@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+
+	<title>Member Name</title>
+	
+</head>
+
+<body>
+
+	<h1>Member Details</h1>
+
+	<!-- Toimii input-muodossa mutta ei listana. Ilmeisesti ongelma syntaxissa. -->
+	
+	<form th:object="${member}">
+	
+		<input type="hidden" th:field="*{memberId}"/>
+		
+		<input th:field="*{firstName}" />		
+		<input th:field="*{lastName}" />
+		<div style="clear: both; display: block; height: 5px;"></div>
+		
+		<input th:field="*{email}" />		
+		<input th:field="*{phoneNumber}" />
+		<div style="clear: both; display: block; height: 5px;"></div>
+		
+		<textarea th:field="*{description}" style="height: 150px; width: 400px;">
+			description
+		</textarea>				
+		<div style="clear: both; display: block; height: 5px;"></div>
+			
+				
+	</form>
+	
+	<div style="clear: both; display: block; height: 5px;"></div>
+  				
+	<table>
+
+		<tr>
+			<th>ProjectId</th>
+			<th>Project</th>
+			<th>Job Description</th>
+			<th>Project Page </th>
+			
+		</tr>		
+	
+		<tr th:each="membership : ${memberships}">
+			<td th:text="${membership.project.projectId}"></td>
+			<td th:text="${membership.project.projectName}"></td>
+			<td th:text="${membership.jobDescription}"></td>
+
+			<td><a th:href="@{/projectDetails/{projectId}(projectId=${membership.project.projectId})}">More information</a></td>		
+					
+		</tr>
+	
+	</table>
+	
+	<div style="clear: both; display: block; height: 20px;"></div>
+	
+	<Form action="/memberCatalog">
+		<input type="submit" value="Members" />
+	</Form>
+	
+	<div style="clear: both; display: block; height: 5px;"></div>	
+	
+	<Form action="/projectCatalog">
+		<input type="submit" value="projects" />
+	</Form>
+	
+<!--	
+ <table>
+	<tr>
+		<th>Project Name</th>
+		<th>Description</th>
+	</tr>
+	<tr th:each = "project : ${projects}">
+		<td th:text="${project.projectName}"></td>
+		<td th:text="${project.description}"></td>		
+	</tr>	
+</table>	
+ -->
+
+</body>
+
+</html>

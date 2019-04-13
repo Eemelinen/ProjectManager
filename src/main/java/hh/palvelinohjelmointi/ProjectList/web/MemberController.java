@@ -14,13 +14,13 @@ public class MemberController {
 	private MemberRepository memberRepo;
 	
 	
-	@RequestMapping(value= {"/memberCatalog"})
-	public String membersListed(Model model) {
-		
-		model.addAttribute("members", memberRepo.findAll());
-		
-		return "memberCatalog";
-		
-	}
+//	@RequestMapping(value= {"/memberCatalog"})
+//	public String membersListed(Model model) {
+//		
+//		model.addAttribute("members", memberRepo.findAll());
+//		
+//		return "memberCatalog";
+//		
+//	}
 
 }

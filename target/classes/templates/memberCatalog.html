@@ -8,20 +8,28 @@
 
 <h1>Members</h1>
 
+
+<Form action="/projectCatalog">
+	<input type="submit" value="Projects" />
+</Form>
+
+<div style="clear: both; display: block; height: 20px;"></div>
+
 <table>
 
 	<tr>
+		<th>Id</th>
 		<th>First Name</th>
 		<th>Last Name</th>
-		<th>Phone Number</th>
-		<th>Description</th>
+		<th>Member Page</th>
 	</tr>
 	
 	<tr th:each = "member : ${members}">
+		<td th:text="${member.memberId}"></td>
 		<td th:text="${member.firstName}"></td>
 		<td th:text="${member.lastName}"></td>
-		<td th:text="${member.phoneNumber}"></td>
-		<td th:text="${member.description}"></td>
+		<td><a th:href="@{/memberDetails/{memberId}(memberId=${member.memberId})}">Check details</a></td>
+		
 	</tr>
 
 </table>
