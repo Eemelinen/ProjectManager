@@ -7,25 +7,25 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import hh.palvelinohjelmointi.ProjectList.model.User;
-import hh.palvelinohjelmointi.ProjectList.model.UserRepository;
+import hh.palvelinohjelmointi.ProjectList.model.Member;
+import hh.palvelinohjelmointi.ProjectList.model.MemberRepository;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 	
-	private final UserRepository repository;
+	private final MemberRepository repository;
 	
 	@Autowired
-	public UserDetailServiceImpl(UserRepository userRepository) {	
-		this.repository = userRepository;
+	public UserDetailServiceImpl(MemberRepository memberRepository) {	
+		this.repository = memberRepository;
 	}
 	
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {   
-    	User curruser = repository.findByUsername(username);
-        UserDetails user = new org.springframework.security.core.userdetails.User(username, curruser.getPasswordHash(), 
-        		AuthorityUtils.createAuthorityList(curruser.getRole()));
+    	Member member = repository.findByUsername(username);
+        UserDetails user = new org.springframework.security.core.userdetails.User(username, member.getPasswordHash(), 
+        		AuthorityUtils.createAuthorityList(member.getRole()));
         return user;
     }   
 }
