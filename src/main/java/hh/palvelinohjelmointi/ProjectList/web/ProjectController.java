@@ -22,6 +22,11 @@ public class ProjectController {
 	@Autowired
 	private MembershipRepository membershipRepo;
 	
+    @RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
+    
 	// == Kaikki projektit haetaan katalogisivulle näytettäväksi. Näihin tulee linkit sivulle projektin tiedosita. ==
 	@RequestMapping(value= {"/", "/projectCatalog"})
 	public String projectsListed(Model model) {	
@@ -58,5 +63,4 @@ public class ProjectController {
 		
 		return "memberDetails";
 	}
-	
 }

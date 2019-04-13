@@ -80,5 +80,4 @@ public class Membership {
 		return "Membership [membershipId=" + membershipId + ", jobDescription=" + jobDescription + ", date=" + date
 				+ ", member=" + member + ", project=" + project + "]";
 	}
-
 }

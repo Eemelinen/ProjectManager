@@ -13,6 +13,8 @@ import hh.palvelinohjelmointi.ProjectList.model.Membership;
 import hh.palvelinohjelmointi.ProjectList.model.MembershipRepository;
 import hh.palvelinohjelmointi.ProjectList.model.Project;
 import hh.palvelinohjelmointi.ProjectList.model.ProjectRepository;
+import hh.palvelinohjelmointi.ProjectList.model.User;
+import hh.palvelinohjelmointi.ProjectList.model.UserRepository;
 
 @SpringBootApplication
 public class ProjectListApplication {
@@ -24,7 +26,7 @@ public class ProjectListApplication {
 	private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
 	
 	@Bean
-	public CommandLineRunner membershipTestData(MembershipRepository membershipRepo, MemberRepository memberRepo, ProjectRepository projectRepo) {
+	public CommandLineRunner membershipTestData(MembershipRepository membershipRepo, MemberRepository memberRepo, ProjectRepository projectRepo, UserRepository userRepo) {
 		
 		return (args) -> {
 			
@@ -58,6 +60,11 @@ public class ProjectListApplication {
 			membershipRepo.save(new Membership("Designer of rover tires.", memberRepo.findByLastName("Surakka").get(0),
 					projectRepo.findByProjectName("Mars Rover").get(0)));
 			
+			User user1 = new User("user", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "USER");
+			User user2 = new User("admin", "$2a$10$1Wx77JGem8GZNZ8g3uxybePFIj.aLMS2Hyxf3o2efFWDHAs3A7CZW", "ADMIN");
+			userRepo.save(user1);
+			userRepo.save(user2);
+			
 //			for (Membership membership : membershipRepo.findAll()) {
 //				log.info(membership.toString());
 //			}
@@ -65,6 +72,7 @@ public class ProjectListApplication {
 //			for (Project project : projectRepo.findAll()) {
 //				log.info(project.toString());
 //			}
+			
 		};	
 	}
 }
