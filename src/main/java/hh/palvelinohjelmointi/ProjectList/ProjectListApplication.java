@@ -1,11 +1,12 @@
 package hh.palvelinohjelmointi.ProjectList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
 
 import hh.palvelinohjelmointi.ProjectList.model.Member;
 import hh.palvelinohjelmointi.ProjectList.model.MemberRepository;
@@ -21,8 +22,10 @@ public class ProjectListApplication {
 		SpringApplication.run(ProjectListApplication.class, args);
 	}
 	
-	private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
+	// == LOGGER == {
+	// private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
 	
+	// == TESTIDATA ==
 	@Bean
 	public CommandLineRunner membershipTestData(MembershipRepository membershipRepo, MemberRepository memberRepo, ProjectRepository projectRepo) {
 		
