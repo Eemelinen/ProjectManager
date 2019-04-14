@@ -9,6 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Member {
@@ -18,21 +24,32 @@ public class Member {
 	@Column(name = "memberId", nullable = false, updatable = false)
 	private long memberId;
 	
+	@JsonIgnore
+	@NotNull
+	@Size(min = 3, max = 25, message = "Length 3 - 25 characters")
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
 	
+	@JsonIgnore
 	@Column(name = "password", nullable = false)
 	private String passwordHash;
 	
 	@Column(name = "role", nullable = false)
 	private String role;
 	
+	@NotNull
 	private String firstName;
+	
+	@NotNull
 	private String lastName;
+	
+	@Email(message= "Please give valid email address.")
 	private String email;
+	
 	private String phoneNumber;
 	private String description;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
 	private List<Membership> memberships;
 	
