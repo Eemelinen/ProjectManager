@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface MembershipRepository extends CrudRepository<Membership, Long> {
 	
-	List<Membership>findByMembershipId(Long membershipId);
+	Membership findByMembershipId(Long membershipId);
 	
 //	@Query(
 //		value = "SELECT * FROM Membership m WHERE m.project_Id = 3",

@@ -21,6 +21,7 @@ public class Project {
 	private String projectName;
 	private String description;
 	
+	// == Vaihtoehtoinen tapa kiertää ikuinen luuppi ja saada silti mukaan projektin jäsenten tiedot. ==
 	@JsonIgnoreProperties("project")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
 	private List<Membership> memberships;

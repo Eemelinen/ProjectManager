@@ -45,6 +45,8 @@ public class ProjectListApplication {
 			memberRepo.save(new Member("Treybish", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Trey", "Gosling", "GoslingToMoon@moonboy.com", "044 9237 344", "Interested in aviation and rocketry."));
 			memberRepo.save(new Member("WildJane", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Jane", "Hash", "Hashed@Gaus.com", "033 5618 223", "Passionate reader and tech enthusiast."));
 			
+			// == Membershipit tehty projektin alussa. Repoon voisi tehdä järkevämmät kursumetodit. ==
+			
 			membershipRepo.save(new Membership("Working on rocket booster's circuitry.", memberRepo.findByLastName("Gosling").get(0),
 					projectRepo.findByProjectName("From Nand to Tetris").get(0)));
 			

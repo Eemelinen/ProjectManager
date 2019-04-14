@@ -8,6 +8,6 @@ public interface ProjectRepository extends CrudRepository <Project, Long> {
 
 	List<Project> findByProjectName(String projectName);
 	
-	List<Project> findByProjectId(Long projectId);
+	Project findByProjectId(Long projectId);
 		
 }
