@@ -1,5 +1,6 @@
 package hh.palvelinohjelmointi.ProjectList.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class Membership {
 	@JoinColumn(name = "projectId")
 	private Project project;
 	
-	public Membership() {}
+	public Membership() {}	
 
 	public Membership(String jobDescription, Member member, Project project) {
 		super();
@@ -80,5 +81,4 @@ public class Membership {
 		return "Membership [membershipId=" + membershipId + ", jobDescription=" + jobDescription + ", date=" + date
 				+ ", member=" + member + ", project=" + project + "]";
 	}
-
 }

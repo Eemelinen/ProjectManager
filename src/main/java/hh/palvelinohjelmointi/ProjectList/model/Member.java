@@ -3,6 +3,7 @@ package hh.palvelinohjelmointi.ProjectList.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,17 @@ public class Member {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "memberId", nullable = false, updatable = false)
 	private long memberId;
+	
+	@Column(name = "username", nullable = false, unique = true)
+	private String username;
+	
+	@Column(name = "password", nullable = false)
+	private String passwordHash;
+	
+	@Column(name = "role", nullable = false)
+	private String role;
 	
 	private String firstName;
 	private String lastName;
@@ -27,9 +38,12 @@ public class Member {
 	
 	public Member() {}
 	
-	public Member(String firstName, String lastName, String email, String phoneNumber,
-			String description) {
+	public Member(String username, String passwordHash, String role, String firstName, String lastName, String email,
+			String phoneNumber, String description) {
 		super();
+		this.username = username;
+		this.passwordHash = passwordHash;
+		this.role = role;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -43,6 +57,30 @@ public class Member {
 
 	public void setMemberId(long memberId) {
 		this.memberId = memberId;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPasswordHash() {
+		return passwordHash;
+	}
+
+	public void setPasswordHash(String passwordHash) {
+		this.passwordHash = passwordHash;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getFirstName() {
