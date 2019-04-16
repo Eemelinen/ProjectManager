@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 
-	<title>Project Name</title>
+	<title>Project Details</title>
 	
 </head>
 
@@ -13,42 +16,43 @@
 
 	<h1>Project Details</h1>
 
+	<h4 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h4>
+	 
+	 <div style="background-color: lightblue; margin-top: 20px; padding:20px;">
+		 <h3 th:text="${project.projectName}">Project Placeholder</h3>
+		 <p th:text="${project.description}">Project Placeholder</p>		 
+		 
+		 <Form th:action="@{/joinProject/{projectId}/{username} (projectId=${project.projectId}, username=${#httpServletRequest.remoteUser})}" method="POST">
+		 
+		 	<!-- <input th:value="${#httpServletRequest.remoteUser}" />  -->
 
-	<!-- Toimii input-muodossa mutta ei listana. Ilmeisesti ongelma syntaxissa. -->
+			<input type="submit" value="Join Project" />
+			
+		</Form>
+		 
+	 </div>
 	
-	<form th:object="${project}">
-	
-		<input type="hidden" th:field="*{projectId}"/>
-		
-		<input th:field="*{projectName}" />
-		<div style="clear: both; display: block; height: 5px;"></div>
-		
-		<textarea th:field="*{description}" style="height: 150px; width: 400px;">
-		Description
-		</textarea>
-				
-	</form>
-	
-	<div style="clear: both; display: block; height: 5px;"></div>
+	<div style="clear: both; display: block; height: 15px;"></div>
     				
-	<table>
+	<table class="table table-striped">
 	
 		<tr>
 			<th>MemberId</th>
 			<th>First Name</th>
 			<th>First Name</th>
 			<th>Job Description</th>
+			<th>Joined Project</th>
 			<th>Member Page </th>
 			
-		</tr>		
+		</tr>
 	
 		<tr th:each="membership : ${memberships}">
 			<td th:text="${membership.member.memberId}"></td>
 			<td th:text="${membership.member.firstName}"></td>
 			<td th:text="${membership.member.lastName}"></td>
 			<td th:text="${membership.jobDescription}"></td>
-			<td><a th:href="@{/memberDetails/{memberId}(memberId=${membership.member.memberId})}">More information</a></td>		
-					
+			<td th:text="${membership.date}"></td>
+			<td><a th:href="@{/memberDetails/{memberId}(memberId=${membership.member.memberId})}">More information</a></td>				
 		</tr>
 	
 	</table>
@@ -64,26 +68,6 @@
 	<Form action="/projectCatalog">
 		<input type="submit" value="projects" />
 	</Form>
-
-<!--
-	
-	
- <table>
-
-	<tr>
-		<th>Project Name</th>
-		<th>Description</th>
-	</tr>
-	
-
-	<tr th:each = "project : ${projects}">
-		<td th:text="${project.projectName}"></td>
-		<td th:text="${project.description}"></td>		
-	</tr>
-	
-</table>
-		
- -->
 
 </body>
 

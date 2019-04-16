@@ -10,6 +10,10 @@ public interface MemberRepository extends CrudRepository <Member, Long> {
 	
 	List<Member> findByLastName(String lastName);
 	
+	Member findByUsername(String username);
+	
+	Member findByMemberId(Long memberId);
+	
 	@Query(
 		value = "SELECT * FROM Member m WHERE m.member_Id = ?1",
 		nativeQuery = true)
