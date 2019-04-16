@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<head>
+    <title>Edit tasks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<div style="background-color:salmon; margin-top: 20px; text-align:center; padding: 20px;">
+
+		<h3 style="margin-top:20px">Change person's tasks in the project:</h3>
+	
+	</div>
+				
+	<div style="text-align:center; margin-top:20px">
+		
+		<form th:object="${membershipEditor}" th:action="@{../../../../saveMembership}" action="#" method="POST" style="margin-left:20px">
+		
+			<input type="hidden" th:field="*{membershipId}" class="form-control"/>
+					
+			<textarea style="width:50%; text-align:center; margin:auto;" th:field="*{jobDescription}" class="form-control">
+			</textarea>
+			
+			<input type="hidden" th:field="*{username}" class="form-control"/>
+			
+			<input type="hidden" th:field="*{projectId}" class="form-control"/>
+			
+			<input style="margin:20px;" class="btn btn-danger" type="submit" value="Save"></input>
+			
+		</form>
+		
+	</div>
+			
+			<!--
+			
+		  	<label for="memberlist">member</label>
+			 <select id="memberlist" th:field="*{member}" class="form-control">
+       			<option th:each="member: ${members}"
+       			th:value="${member.memberId}"
+       			th:text="${member.username}"></option>
+    		</select>			
+			<input type="text" th:field="*{project.projectId}" class="form-control"/>
+						
+		  	<label for="jobDescription"></label>
+			<textarea id="jobDescription" th:field="*{jobDescription}" style="display:block; width:400px; height: 200px;">
+			
+			</textarea>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			-->
+								
+</body>
+</html>

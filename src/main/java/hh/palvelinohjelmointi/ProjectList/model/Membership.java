@@ -28,12 +28,21 @@ public class Membership {
 	@JoinColumn(name = "projectId")
 	private Project project;
 	
-	public Membership() {}
+	public Membership() {}	
 
 	public Membership(String jobDescription, Member member, Project project) {
 		super();
 		this.jobDescription = jobDescription;
 		this.date = new Date();
+		this.member = member;
+		this.project = project;
+	}
+
+	public Membership(long membershipId, String jobDescription, Date date, Member member, Project project) {
+		super();
+		this.membershipId = membershipId;
+		this.jobDescription = jobDescription;
+		this.date = date;
 		this.member = member;
 		this.project = project;
 	}
@@ -80,5 +89,4 @@ public class Membership {
 		return "Membership [membershipId=" + membershipId + ", jobDescription=" + jobDescription + ", date=" + date
 				+ ", member=" + member + ", project=" + project + "]";
 	}
-
 }

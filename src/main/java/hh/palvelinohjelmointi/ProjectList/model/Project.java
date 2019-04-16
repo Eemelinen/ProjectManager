@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Project {
 	
@@ -19,6 +21,8 @@ public class Project {
 	private String projectName;
 	private String description;
 	
+	// == Vaihtoehtoinen tapa kiertää ikuinen luuppi ja saada silti mukaan projektin jäsenten tiedot. ==
+	@JsonIgnoreProperties("project")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
 	private List<Membership> memberships;
 	

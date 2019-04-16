@@ -1,11 +1,12 @@
 package hh.palvelinohjelmointi.ProjectList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
 
 import hh.palvelinohjelmointi.ProjectList.model.Member;
 import hh.palvelinohjelmointi.ProjectList.model.MemberRepository;
@@ -21,8 +22,10 @@ public class ProjectListApplication {
 		SpringApplication.run(ProjectListApplication.class, args);
 	}
 	
-	private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
+	// == LOGGER == {
+	// private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
 	
+	// == TESTIDATA ==
 	@Bean
 	public CommandLineRunner membershipTestData(MembershipRepository membershipRepo, MemberRepository memberRepo, ProjectRepository projectRepo) {
 		
@@ -37,11 +40,15 @@ public class ProjectListApplication {
 			projectRepo.save(new Project("Wisdom Generator", "Build a machine that combines old proverbs from famous"
 					+ " intellectuels into new ones using artificial intelligence."));
 			
-			memberRepo.save(new Member("Eemeli", "Surakka", "eemeli89@hotmail.fi", "044 9564 970", "Interested in 3D-printing and Machine-learning."));
-			memberRepo.save(new Member("Jaakko", "Hurme", "Jaakko89@hotmail.fi", "045 9565 235", "Math expert and techno poet."));
-			memberRepo.save(new Member("Jake", "Castro", "Jakeman@hotmail.com", "042 3566 970", "Multitasker and web developer"));
-			memberRepo.save(new Member("Trey", "Gosling", "GoslingToMoon@moonboy.com", "044 9237 344", "Interested in aviation and rocketry."));
-			memberRepo.save(new Member("Jane", "Hash", "Hashed@Gaus.com", "033 5618 223", "Passionate reader and tech enthusiast."));
+			// == Käyttäjätunnistautuminen on lisätty member-luokkaan. == 
+			
+			memberRepo.save(new Member("Eemelinen", "$2a$10$1Wx77JGem8GZNZ8g3uxybePFIj.aLMS2Hyxf3o2efFWDHAs3A7CZW", "admin", "Eemeli", "Surakka", "eemeli89@hotmail.fi", "044 9564 970", "Interested in 3D-printing and Machine-learning."));
+			memberRepo.save(new Member("Jaakkola", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Jaakko", "Hurme", "Jaakko89@hotmail.fi", "045 9565 235", "Math expert and techno poet."));
+			memberRepo.save(new Member("Jakey", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Jake", "Castro", "Jakeman@hotmail.com", "042 3566 970", "Multitasker and web developer"));
+			memberRepo.save(new Member("Treybish", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Trey", "Gosling", "GoslingToMoon@moonboy.com", "044 9237 344", "Interested in aviation and rocketry."));
+			memberRepo.save(new Member("WildJane", "$2a$10$tLy5ngwYvnltoar6SDFExubXzzeawxuY4rr7N/BOREveJf45x08GW", "user", "Jane", "Hash", "Hashed@Gaus.com", "033 5618 223", "Passionate reader and tech enthusiast."));
+			
+			// == Membershipit tehty projektin alussa. Repoon voisi tehdä järkevämmät kursumetodit. ==
 			
 			membershipRepo.save(new Membership("Working on rocket booster's circuitry.", memberRepo.findByLastName("Gosling").get(0),
 					projectRepo.findByProjectName("From Nand to Tetris").get(0)));
@@ -65,6 +72,7 @@ public class ProjectListApplication {
 //			for (Project project : projectRepo.findAll()) {
 //				log.info(project.toString());
 //			}
+			
 		};	
 	}
 }
