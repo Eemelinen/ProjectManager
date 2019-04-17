@@ -22,10 +22,7 @@ public class ProjectListApplication {
 		SpringApplication.run(ProjectListApplication.class, args);
 	}
 	
-	// == LOGGER == {
-	// private static final Logger log = LoggerFactory.getLogger(ProjectListApplication.class);
-	
-	// == TESTIDATA ==
+	// == DEMO DATA ==
 	@Bean
 	public CommandLineRunner membershipTestData(MembershipRepository membershipRepo, MemberRepository memberRepo, ProjectRepository projectRepo) {
 		
@@ -64,14 +61,6 @@ public class ProjectListApplication {
 			
 			membershipRepo.save(new Membership("Designer of rover tires.", memberRepo.findByLastName("Surakka").get(0),
 					projectRepo.findByProjectName("Mars Rover").get(0)));
-			
-//			for (Membership membership : membershipRepo.findAll()) {
-//				log.info(membership.toString());
-//			}
-			
-//			for (Project project : projectRepo.findAll()) {
-//				log.info(project.toString());
-//			}
 			
 		};	
 	}

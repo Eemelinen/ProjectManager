@@ -12,21 +12,47 @@
 <body>
 
 	<h1>Register</h1>
-	<!-- 
-		<form th:object="${project}" th:action="@{saveProject}" action="#" method="POST">
-		  	<label for="projectName">Project Name</label>
-			<input type="text" id="projectName" th:field="*{projectName}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
-		  	
-		  	<label for="description">Description</label>
-			<input type="text" id="description" th:field="*{description}" />
-			<div style="clear: both; display: block; height: 10px;"></div>		
-			<input type="submit" value="Save"></input>	
+	
+     <div class="col-md-4">
+		<form th:object="${signupform}" th:action="@{/saveMember}" action="#" method="POST">
+			<div>
+				<label> Username :<input type="text" th:field="*{username}" class="form-control"/></label>
+				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
+			</div>
+			
+			<div>
+				<label> First name:<input type="text" th:field="*{firstName}" class="form-control"/></label>
+			</div>
+			
+			<div>
+				<label> Last name:<input type="text" th:field="*{lastName}" class="form-control"/></label>
+			</div>
+			
+			<div>
+				<label> Email:<input type="text" th:field="*{email}" class="form-control"/></label>
+			</div>
+			
+			<div>
+				<label> Phone number:<input type="text" th:field="*{phoneNumber}" class="form-control"/></label>
+			</div>
+			<div>
+				<label> Short description of your interests:<input type="text" th:field="*{description}" class="form-control"/></label>
+			</div>					
+			<div>
+				<label> Password :<input type="password" th:field="*{password}" class="form-control"/></label>
+				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
+			</div>
+			<div>
+				<label> Re-type Password: <input type="password" th:field="*{passwordCheck}" class="form-control"/></label>
+				<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
+			</div>
+			
+			<input type="submit" class="btn btn-success" value="Signup"></input>	
 		</form>
-	 -->
+	</div>
 	 
 	 <Form action="/login">
-		<input type="submit" value="Back" />
+		<input type="submit" value="Back" class="btn btn-danger" style="margin-top:10px; margin-left:20px;"/>
 	</Form>
 
 </body>

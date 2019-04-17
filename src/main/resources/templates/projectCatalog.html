@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -27,11 +27,11 @@
 
 		<h1 th:text="#{headline}">Projects</h1>
 		
-		<h4 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h4>
+		<h4 th:inline="text" sec:authorize="hasAnyAuthority('admin', 'user')">Logged in as: [[${#httpServletRequest.remoteUser}]]</h4>
 		
 		<div style="clear: both; display: block; height: 10px;"></div>
 		
-		<form action="/newProject">
+		<form action="/newProject" sec:authorize="hasAuthority('admin')">
 	    	<input type="submit" value="New Project" class="btn btn-success"/>
 		</form>
 	
@@ -59,11 +59,11 @@
 	
 	<div style="background-color:lightblue; margin-top: 20px; text-align:center; padding: 20px;">
 	
-		<form th:action="@{/logout}" method="post">
+		<form th:action="@{/logout}" method="post" sec:authorize="hasAnyAuthority('admin', 'user')">
 			<input type="submit" value="Sign Out" class="btn btn-danger"/>
 		</form>
 		
-		<Form action="/memberCatalog" style="margin-top:10px">
+		<Form action="/memberCatalog" style="margin-top:10px" sec:authorize="hasAuthority('admin')">
 			<input type="submit" value="Members" class="btn btn-primary"/>
 		</Form>
 	</div>
