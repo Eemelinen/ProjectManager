@@ -3,10 +3,14 @@ package hh.palvelinohjelmointi.ProjectList.web;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +22,7 @@ import hh.palvelinohjelmointi.ProjectList.model.MembershipEditor;
 import hh.palvelinohjelmointi.ProjectList.model.MembershipRepository;
 import hh.palvelinohjelmointi.ProjectList.model.Project;
 import hh.palvelinohjelmointi.ProjectList.model.ProjectRepository;
+import hh.palvelinohjelmointi.ProjectList.model.SignUpForm;
 
 @Controller
 public class ProjectController {
@@ -142,11 +147,41 @@ public class ProjectController {
 		return "redirect:" + referer;
 	}
 
-
-
 	@RequestMapping(value="/register")
 	public String register(Model model) {
-		model.addAttribute("member", new Member());
+		model.addAttribute("signupform", new SignUpForm());
 		return "register";
+	}
+	
+	@RequestMapping(value="saveMember", method = RequestMethod.POST)
+	public String saveMember(@Valid @ModelAttribute("signupform") SignUpForm signUpForm, BindingResult bindingResult) {
+		if(!bindingResult.hasErrors()) {
+			if (signUpForm.getPassword().equals(signUpForm.getPasswordCheck())) {
+				String password = signUpForm.getPassword();
+				BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+				String hashedPassword = encoder.encode(password);
+				
+				Member member = new Member();
+				member.setUsername(signUpForm.getUsername());
+				member.setPasswordHash(hashedPassword);
+				member.setRole(signUpForm.getRole());
+				member.setFirstName(signUpForm.getFirstName());
+				member.setLastName(signUpForm.getLastName());
+				member.setEmail(signUpForm.getEmail());
+				member.setPhoneNumber(signUpForm.getPhoneNumber());
+				member.setDescription(signUpForm.getDescription());
+				member.setMemberships(signUpForm.getMemberships());
+				
+				if (memberRepo.findByUsername(signUpForm.getUsername()) == null) {
+					memberRepo.save(member);
+				} else {
+					bindingResult.rejectValue("username", "err.username", " Sorry! This username is already taken.");
+					return "register";
+				}	
+			} else {
+				return "register";
+			}
+		}
+		return "redirect:/login";
 	}
 }
