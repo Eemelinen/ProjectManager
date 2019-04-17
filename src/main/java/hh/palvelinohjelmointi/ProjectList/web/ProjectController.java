@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +49,7 @@ public class ProjectController {
 		return "projectCatalog";
 	}
 	
+	@PreAuthorize("hasAuthority('admin')")
 	@RequestMapping(value= {"/memberCatalog"})
 	public String membersListed(Model model) {
 		model.addAttribute("members", memberRepo.findAll());			
@@ -78,6 +80,7 @@ public class ProjectController {
 		return "projectDetails";
 	}
 	
+	@PreAuthorize("hasAuthority('admin')")
 	@RequestMapping(value= {"/newProject"})
 	public String newProject(Model model) {
 		
@@ -106,6 +109,7 @@ public class ProjectController {
 		return "redirect:/projectDetails/{projectId}/{username}";
 	}
 	
+	@PreAuthorize("hasAuthority('admin')")
 	@RequestMapping(value="projectDetails/memberTasks/{membershipId}/{projectId}/{username}")
 	public String memberTasks(@PathVariable("membershipId") Long membershipId,
 			@PathVariable("projectId") Long projectId, @PathVariable("username") String username, Model model) {
@@ -136,6 +140,7 @@ public class ProjectController {
 		return "redirect:/projectCatalog";
 	}
 	
+	@PreAuthorize("hasAuthority('admin')")
 	@RequestMapping(value="/delete/{membershipId}", method=RequestMethod.GET)
 	public String deleteMemberFromProject(@PathVariable("membershipId") Long id, HttpServletRequest request) {
 		
