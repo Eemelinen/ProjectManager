@@ -7,19 +7,17 @@ This web application is meant as a basic project managering tool. In theory it c
 You can freely try the app in Heroku using the following link:
 https://projectmanagereemeli.herokuapp.com/ (Be patient! It is a slow one)
 
-**********************************************************************
-
-You can test admin user functionalities of the app with the following login details:
+## You can test admin user functionalities of the app with the following login details:
 
 Username: Eemelinen
 
 Password: admin
 
-<h4>*Don't worry! Only imaginary personal details in the app.</h4>
+* Don't worry! Only imaginary personal details in the app. *
 
 Or you can register as a new user.
 
-<h3>Known bugs:</h3>
+## Known bugs:
 
 - When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
 
