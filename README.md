@@ -10,9 +10,11 @@ This web application is meant as a basic project managering tool. In theory it c
 3. Change tasks
 4. Remove students from projects
 5. See the list of all students, plus their contact information and the projects they have joined
+
 ************************************************************************
 You can also register to the app as a normal user. (Lets stick to our roles and say that you are a student)
 ************************************************************************
+
 
 <h4>As a student user you can:</h4>
 1. Sign up to the site
