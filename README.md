@@ -76,3 +76,14 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 
 
 **********************************************************************
+
+# Project Manager pictures:
+
+### Project list page:
+![RealLanding](https://user-images.githubusercontent.com/37372229/64929198-8babdb80-d82b-11e9-967a-fcba7abbd398.png)
+
+### Project page:
+![Landing](https://user-images.githubusercontent.com/37372229/64929197-8babdb80-d82b-11e9-816d-9a0779bef35d.png)
+
+### Member list page:
+![members](https://user-images.githubusercontent.com/37372229/64929199-8babdb80-d82b-11e9-850d-2f05cd631c8d.png)
