@@ -33,7 +33,9 @@ You can freely try the app in Heroku using the following link:
 https://projectmanagereemeli.herokuapp.com/
 
 You can test admin user functionalities of the app with the following login details:
+
 *Username: Eemelinen
+
 *Password: admin
 
 <h4>*Don't worry! Only imaginary personal details in the app.</h4>
