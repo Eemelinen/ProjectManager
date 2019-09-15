@@ -7,6 +7,8 @@ This web application is meant as a basic project managering tool. In theory it c
 You can freely try the app in Heroku using the following link:
 https://projectmanagereemeli.herokuapp.com/ (Be patient! It is a slow one)
 
+**********************************************************************
+
 ### You can test admin user functionalities of the app with the following login details:
 
 Username: Eemelinen
@@ -16,6 +18,8 @@ Password: admin
 * Don't worry! Only imaginary personal details in the app. *
 
 Or you can register as a new user.
+
+**********************************************************************
 
 ## Known bugs:
 
@@ -27,8 +31,7 @@ Or you can register as a new user.
 
 **********************************************************************
 
-
-<h4>As a teacher admin user you can:</h4>
+### As a teacher admin user you can:
 
 1. Create new projects
 2. Give students who have joined a particular project tasks.
@@ -36,12 +39,9 @@ Or you can register as a new user.
 4. Remove students from projects
 5. See the list of all students, plus their contact information and the projects they have joined
 
-************************************************************************
 You can also register to the app as a normal user. (Lets stick to our roles and say that you are a student)
-************************************************************************
 
-
-<h4>As a student user you can:</h4>
+### As a student user you can:
 
 1. Sign up to the site
 2. Join projects
