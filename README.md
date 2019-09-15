@@ -1,6 +1,6 @@
-##Welcome to my Project Manager!
+<h3>Welcome to my Project Manager!</h3>
 
-##What is it?
+<h4>What is it?</h4>
 This web application is meant as a basic project managering tool. In theory it could be used by for example a teacher to manage groups of students doing different kinds of projects within a course.
 
 With Admin rights teacher could for example:
