@@ -47,7 +47,7 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 2. Join projects
 3. See the member pages of other student's who have joined the projects.
 
-<h4>As a regular user you cant:</h4>
+<h4>As a regular user you can't:
 1. See all all the people who have signed up to the site.
 2. Modify project or user details.
 
