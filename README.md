@@ -6,6 +6,29 @@ This web application is meant as a basic project managering tool. In theory it c
 
 **********************************************************************
 
+<h4>Technologies used:</h4>
+
+- Java
+
+- Spring Boot (Front- and backend coding)
+
+- Ajax
+
+- REST
+
+- Spring Security
+
+- Maven
+
+- JUnit
+
+- Heroku
+
+- Git and Github
+
+
+**********************************************************************
+
 <h4>As a teacher admin user you can:</h4>
 
 1. Create new projects
