@@ -5,7 +5,7 @@
 This web application is meant as a basic project managering tool. In theory it could be used by for example a teacher to manage groups of students doing different kinds of projects within a course.
 
 You can freely try the app in Heroku using the following link:
-https://projectmanagereemeli.herokuapp.com/ (Be patient! It is a slow link)
+https://projectmanagereemeli.herokuapp.com/ (Be patient! It is a slow one)
 
 **********************************************************************
 
