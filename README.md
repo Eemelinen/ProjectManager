@@ -32,7 +32,11 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 You can freely try the app in Heroku using the following link:
 https://projectmanagereemeli.herokuapp.com/
 
-You can test admin user functionalities of the app with the 
+You can test admin user functionalities of the app with the following login details:
+Username: Eemelinen
+Password: admin
+
+<h4>*Don't worry! Only imaginary personal details in the app.</h4>
 
 ************************************************************************
 
@@ -40,8 +44,6 @@ You can test admin user functionalities of the app with the
 - When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
 - When logging in you sometimes receive an error message. Just navigate back to the main page, and you should show as logged in.
 - Finnish language is not available for every page. Even though language change option is there.
+
 ************************************************************************
 
-
-
-This project was done as a part of server programming course of Haaga-Helia.
