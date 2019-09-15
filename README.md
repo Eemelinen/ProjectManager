@@ -23,13 +23,16 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 2. Join projects
 3. See the member pages of other student's who have joined the projects.
 
-As a regular user you cant:
+<h4>As a regular user you cant:</h4>
 1. See all all the people who have signed up to the site.
 2. Modify project or user details.
 
 ************************************************************************
 
+You can freely try the app in Heroku using the following link:
+https://projectmanagereemeli.herokuapp.com/
 
+You can test admin user functionalities of the app with the 
 
 ************************************************************************
 
