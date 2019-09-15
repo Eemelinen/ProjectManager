@@ -4,7 +4,7 @@
 This web application is meant as a basic project managering tool. In theory it could be used by for example a teacher to manage groups of students doing different kinds of projects within a course.
 
 **********************************************************************
-<h4>With Admin rights teacher could for example:</h4>
+<h4>As a teacher admin user you can:</h4>
 
 1. Create new projects
 2. Give students who have joined a particular project tasks.
@@ -26,7 +26,13 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 As a regular user you cant:
 1. See all all the people who have signed up to the site.
 2. Modify project or user details.
+
 ************************************************************************
+
+
+
+************************************************************************
+
 <h3>Known bugs:</h3>
 - When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
 - When logging in you sometimes receive an error message. Just navigate back to the main page, and you should show as logged in.
