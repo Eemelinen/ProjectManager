@@ -4,6 +4,19 @@
 
 This web application is meant as a basic project managering tool. In theory it could be used by for example a teacher to manage groups of students doing different kinds of projects within a course.
 
+You can freely try the app in Heroku using the following link:
+https://projectmanagereemeli.herokuapp.com/
+
+You can test admin user functionalities of the app with the following login details:
+
+Username: Eemelinen
+
+Password: admin
+
+<h4>*Don't worry! Only imaginary personal details in the app.</h4>
+
+Or you can register as a new user.
+
 **********************************************************************
 
 <h4>Technologies used:</h4>
@@ -52,20 +65,6 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 1. See all all the people who have signed up to the site.
 2. Modify project or user details.
 
-************************************************************************
-
-You can freely try the app in Heroku using the following link:
-https://projectmanagereemeli.herokuapp.com/
-
-You can test admin user functionalities of the app with the following login details:
-
-Username: Eemelinen
-
-Password: admin
-
-<h4>*Don't worry! Only imaginary personal details in the app.</h4>
-
-Or you can register as a new user.
 
 ************************************************************************
 
