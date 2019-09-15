@@ -19,6 +19,14 @@ Password: admin
 
 Or you can register as a new user.
 
+<h3>Known bugs:</h3>
+
+- When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
+
+- When logging in you sometimes receive an error message. Just navigate back to the main page, and you should show as logged in.
+
+- Finnish language is not available for every page. Even though language change option is there.
+
 **********************************************************************
 
 
@@ -70,14 +78,3 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 
 
 **********************************************************************
-
-<h3>Known bugs:</h3>
-
-- When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
-
-- When logging in you sometimes receive an error message. Just navigate back to the main page, and you should show as logged in.
-
-- Finnish language is not available for every page. Even though language change option is there.
-
-************************************************************************
-
