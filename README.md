@@ -21,28 +21,6 @@ Or you can register as a new user.
 
 **********************************************************************
 
-<h4>Technologies used:</h4>
-
-- Java
-
-- Spring Boot (Front- and backend coding)
-
-- Ajax
-
-- REST
-
-- Spring Security
-
-- Maven
-
-- JUnit
-
-- Heroku
-
-- Git and Github
-
-
-**********************************************************************
 
 <h4>As a teacher admin user you can:</h4>
 
@@ -69,6 +47,29 @@ You can also register to the app as a normal user. (Lets stick to our roles and 
 
 
 ************************************************************************
+
+<h4>Technologies used:</h4>
+
+- Java
+
+- Spring Boot (Front- and backend coding)
+
+- Ajax
+
+- REST
+
+- Spring Security
+
+- Maven
+
+- JUnit
+
+- Heroku
+
+- Git and Github
+
+
+**********************************************************************
 
 <h3>Known bugs:</h3>
 
