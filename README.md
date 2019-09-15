@@ -34,17 +34,20 @@ https://projectmanagereemeli.herokuapp.com/
 
 You can test admin user functionalities of the app with the following login details:
 
-*Username: Eemelinen
+Username: Eemelinen
 
-*Password: admin
+Password: admin
 
 <h4>*Don't worry! Only imaginary personal details in the app.</h4>
 
 ************************************************************************
 
 <h3>Known bugs:</h3>
+
 - When registering to the application as a new user you might get an error message. In this case just navigate back to the main page.
+
 - When logging in you sometimes receive an error message. Just navigate back to the main page, and you should show as logged in.
+
 - Finnish language is not available for every page. Even though language change option is there.
 
 ************************************************************************
