@@ -1,9 +1,11 @@
 <h3>Welcome to my Project Manager!</h3>
 
 <h4>What is it?</h4>
+
 This web application is meant as a basic project managering tool. In theory it could be used by for example a teacher to manage groups of students doing different kinds of projects within a course.
 
 **********************************************************************
+
 <h4>As a teacher admin user you can:</h4>
 
 1. Create new projects
@@ -39,6 +41,8 @@ Username: Eemelinen
 Password: admin
 
 <h4>*Don't worry! Only imaginary personal details in the app.</h4>
+
+Or you can register as a new user.
 
 ************************************************************************
 
